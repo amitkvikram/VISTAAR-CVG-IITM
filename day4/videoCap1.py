@@ -23,8 +23,6 @@ def draw_rect(event, x, y, flags, param):
     if event==cv2.EVENT_LBUTTONDOWN:
         init_x=x
         init_y=y
-        x1=x
-        y1=y 
         flag=1
     elif event==cv2.EVENT_LBUTTONUP:
         final_y=y
@@ -46,7 +44,7 @@ while(True):
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
     if(flag==1):
-        cv2.rectangle(frame,(init_x,init_y),(x1,y1),(0,255,0),1)
+        cv2.rectangle(frame,(init_x,init_y),(x1,y1),(0,255,0),3)
     if(flag==3):
         cv2.rectangle(frame,(init_x,init_y),(final_x, final_y),(0,255,0),3)
     cv2.imshow('frame',frame)
@@ -86,9 +84,6 @@ Val_dev=sqrt(np.sum(np.square(Val_matrix- Val_mean))/len(Val_matrix))
 
 lower_blue= np.array([Hue_mean-Hue_dev, Sat_mean- Sat_dev, Val_mean-Val_dev]).astype('uint8')
 upper_blue=np.array([Hue_mean+Hue_dev, Sat_mean+Sat_dev, Val_mean+Val_dev]).astype('uint8')
-
-print(lower_blue)
-print(upper_blue)
 
 cap=cv2.VideoCapture(0)
 while(True):

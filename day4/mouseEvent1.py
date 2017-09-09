@@ -12,4 +12,5 @@ def event_():
 def draw_circle(event, x, y, flags, param):
     if event== cv2.EVENT_LBUTTONDBLCLK:
         cv2.circle(img,(x,y), 100, (255,0,0), -1)
-        prin
+
+

@@ -19,3 +19,4 @@ cv2.destroyAllWindows()
 #cv2.THRESH_BINARY_INV-> opposite behaviour of cv2.THRES-BINARY_INV
 
 #*****cv2.threshold only applies to single-channel array
+
